@@ -831,6 +831,16 @@ class BaichuanAdapter(BaseModelAdapter):
     def get_default_conv_template(self, model_path: str) -> Conversation:
         return get_conv_template("one_shot")
 
+class UltraLMAdapter(BaseModelAdapter):
+    """The model adapter for UltraLM-13b"""
+
+    def match(self, model_path: str):
+        return "ultralm" in model_path.lower()
+
+    def get_default_conv_template(self, model_path: str) -> Conversation:
+        model_path = model_path.lower()
+        return get_conv_template("ultralm-13b")
+
 
 # Note: the registration order matters.
 # The one registered earlier has a higher matching priority.
@@ -866,6 +876,7 @@ register_model_adapter(TuluAdapter)
 register_model_adapter(FalconAdapter)
 register_model_adapter(TigerBotAdapter)
 register_model_adapter(BaichuanAdapter)
+register_model_adapter(UltraLMAdapter)
 
 # After all adapters, try the default base adapter.
 register_model_adapter(BaseModelAdapter)

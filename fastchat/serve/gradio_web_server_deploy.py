@@ -489,24 +489,16 @@ def get_model_description_md(models):
 
 def build_single_model_ui(models):
     notice_markdown = """
-# 📟 UltraLM Online Demo
+# UltraLM Online Demo
 
-- This is an online demo of [UltraLM](https://github.com/thunlp/UltraChat), a chat language model trained on ULtraChat dataset. The demo is based on [fastchat](https://github.com/lm-sys/FastChat).
+- This is an online demo of [UltraLM-13B](https://github.com/thunlp/UltraChat), a chat language model trained on ULtraChat dataset. The demo is based on [fastchat](https://github.com/lm-sys/FastChat).
 
-- | [GitHub](https://github.com/thunlp/UltraChat) | [Huggingface](https://huggingface.co/openbmb/UltraLM-13b) | [Paper (old version)](https://arxiv.org/abs/2305.14233)|
-
-### Note
-
-- Different hyper-parameters may influence the output of the model. 
-- To make the model more customizable, we did NOT train this version in terms of self-identity.
-- The demo is running on a single-card V100 server, it may slow down when concurrency is high. 
+- | [GitHub](https://github.com/thunlp/UltraChat) | [Huggingface](https://huggingface.co/openbmb/UltraLM-13b) |
 
 ### Terms of use
 By using this service, users are required to agree to the following terms: The service is a research preview intended for non-commercial use only. It only provides limited safety measures and may generate offensive content. It must not be used for any illegal, harmful, violent, racist, or sexual purposes. **The service collects user dialogue data and reserves the right to distribute it under a Creative Commons Attribution (CC-BY) license.**
 
 ### Choose a model to chat with
-
-
 """
 
     state = gr.State()
@@ -732,4 +724,5 @@ if __name__ == "__main__":
         share=args.share,
         max_threads=200,
         auth=auth,
+        # root_path="/"
     )

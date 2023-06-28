@@ -712,9 +712,23 @@ register_conv_template(
     )
 )
 
+# ultralm-13b template
+register_conv_template(
+    Conversation(
+        name="ultralm-13b",
+        system="User: A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, very detailed, and polite answers to the user's questions.",
+        roles=("User", "Assistant"),
+        messages=(),
+        offset=0,
+        sep_style=SeparatorStyle.ADD_COLON_SINGLE,
+        sep="</s>\n",
+        stop_str="###",
+    )
+)
+
 
 if __name__ == "__main__":
-    conv = get_conv_template("vicuna_v1.1")
+    conv = get_conv_template("ultralm-13b")
     conv.append_message(conv.roles[0], "Hello!")
     conv.append_message(conv.roles[1], "Hi!")
     conv.append_message(conv.roles[0], "How are you?")

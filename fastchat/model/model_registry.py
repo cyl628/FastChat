@@ -153,6 +153,12 @@ register_model_info(
     "a chat assistant fine-tuned from FLAN-T5 by LMSYS",
 )
 register_model_info(
+    ["ultralm-13b"],
+    "UltraLM-13b",
+    "https://huggingface.co/openbmb/UltraLM-13b",
+    "A chat language model built by Tsinghua University and OpenBMB.",
+)
+register_model_info(
     ["phoenix-inst-chat-7b"],
     "Phoenix-7B",
     "https://huggingface.co/FreedomIntelligence/phoenix-inst-chat-7b",

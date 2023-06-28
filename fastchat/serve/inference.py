@@ -305,6 +305,7 @@ def chat_loop(
         conv.append_message(conv.roles[0], inp)
         conv.append_message(conv.roles[1], None)
         prompt = conv.get_prompt()
+        print("#### prompt ####\n", prompt, "\n##############")
 
         if is_chatglm:
             generate_stream_func = chatglm_generate_stream
